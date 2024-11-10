@@ -32,7 +32,7 @@ for n_iters in "${n_iters_list[@]}"; do
                         for model_nb in "${model_nb_list[@]}"; do 
                             for temperature in "${temperature_list[@]}"; do
                                 for predict_future_hour in "${predict_future_hours[@]}"; do
-                                        cmd="python3 function-clustering-main-2/main.py --m4_type $m4_type --n_iter $n_iters --learning_rate $learning_rate --weights \"$weights\" --temperature $temperature --seed $seed --test_window $test_window --model_nb $model_nb --predict_future_hours $predict_future_hour --model_type $model_type --log_file $log_file --data_type $data_type --data_path $data_path --max_iterations $max_iterations --stochastic_assignments $stochastic_assignments --smart_initialization $smart_initialization --max_depth $max_depth --num_windows $window"
+                                        cmd="python3 main.py --m4_type $m4_type --n_iter $n_iters --learning_rate $learning_rate --weights \"$weights\" --temperature $temperature --seed $seed --test_window $test_window --model_nb $model_nb --predict_future_hours $predict_future_hour --model_type $model_type --log_file $log_file --data_type $data_type --data_path $data_path --max_iterations $max_iterations --stochastic_assignments $stochastic_assignments --smart_initialization $smart_initialization --max_depth $max_depth --num_windows $window"
                                         echo "Running: $cmd"
                                         $cmd
                                     done
