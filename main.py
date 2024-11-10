@@ -1,7 +1,6 @@
 from function_clustering import FunctionClustering
-from utils import plot_losses, plot_cluster_costs, plot_training_losses_horizontal, plot_ensemble_weights
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
+from utils import plot_training_losses_horizontal, plot_ensemble_weights
+from sklearn.metrics import mean_squared_error
 from lightgbm import LGBMRegressor 
 from sklearn.neural_network import MLPRegressor
 import argparse
@@ -10,8 +9,6 @@ from m4_data_handler import process_m4_data
 from crime_data_handler import crime_data_handler
 import matplotlib.pyplot as plt
 import numpy as np
-from datetime import datetime
-from sklearn.model_selection import train_test_split
 import os
 import random
 
@@ -81,7 +78,6 @@ def main():
         model_args = {"hidden_layer_sizes":hidden_layer_sizes, "max_iter":args.n_iter, "learning_rate_init":args.learning_rate, "batch_size":args.batch_size}
     else: 
         model = LGBMRegressor
-        num_leaves = args.num_leaves
         model_args = {'max_depth': args.max_depth, 'num_iterations': args.n_iter, 'learning_rate': args.learning_rate}
     val=True
     train_models = True

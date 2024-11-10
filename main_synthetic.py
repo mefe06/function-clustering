@@ -1,6 +1,5 @@
 from function_clustering import FunctionClustering
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
+from sklearn.metrics import mean_squared_error
 from synthetic_data import generate_synthetic_data
 from lightgbm import LGBMRegressor 
 from sklearn.neural_network import MLPRegressor
@@ -8,26 +7,8 @@ import argparse
 import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime
-from sklearn.model_selection import train_test_split
 from sklearn.cluster import KMeans
-import numpy as np
-import matplotlib.pyplot as plt
 import seaborn as sns
-from datetime import datetime
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-from datetime import datetime
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-from datetime import datetime
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
-from datetime import datetime
 
 def kmeans_clustering(data, n_clusters):
     kmeans = KMeans(n_clusters=n_clusters, random_state=42)
@@ -92,10 +73,6 @@ def plot_losses(training_losses, validation_losses, title="Training and Validati
     plt.tight_layout()
     plt.savefig(f"test_results/losses_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.png")
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-from datetime import datetime
-import numpy as np
 
 def plot_cluster_scores(histories):
     # Set the style to a more professional look
